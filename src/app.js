@@ -6,6 +6,7 @@ const forecast = require("../utils/forcast");
 
 //create an express application
 const app = express();
+const port = process.env.PORT || 3000;
 
 //define express paths
 const publicDirectory = path.join(__dirname, "../public");
@@ -91,6 +92,6 @@ app.get("*", (req, res) => {
 });
 
 //server port
-app.listen(3000, () => {
-  console.log("server started on 3000");
+app.listen(port, () => {
+  console.log(`server started on ${port}`);
 });
